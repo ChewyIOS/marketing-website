@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VŌLT — Modern Clothing</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <div class="toast-title">Added to Cart</div>
+    <div class="toast-msg" id="toastMsg"></div>
+  </div>
+
+  <!-- Cart Overlay -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <div class="cart-title">Your Cart</div>
+      <button class="cart-close" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <div class="cart-empty-icon">◻</div>
+        <div class="cart-empty-text">Your cart is empty</div>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-price" id="cartTotal">₱0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="logo">VŌLT</a>
+    <ul class="nav-links">
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#featured">Featured</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="nav-icons">
+      <span class="nav-icon" onclick="toggleCart()" style="position:relative;font-size:18px;cursor:none;">
+        🛍
+        <span class="cart-count" id="cartCount">0</span>
+      </span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-visual">
+      <div class="hero-visual-inner"></div>
+      <img src="Images/wool_overcoat.png" class="hero-placeholder" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div class="hero-content">
+      <div class="hero-label">SS 2025 Collection</div>
+      <h1 class="hero-title">Wear<br><em>Your</em><br>Story</h1>
+      <p class="hero-sub">Elevated essentials crafted for those who move through the world with intention. Timeless
+        silhouettes. Uncompromising quality.</p>
+      <div class="hero-actions">
+        <a href="#collections" class="btn-primary">Shop Collection</a>
+        <a href="#featured" class="btn-ghost">Explore Lookbook</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-item">New Arrivals <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Free Shipping Over ₱3,000 <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Sustainable Fabrics <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">SS 2025 Collection <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Handcrafted Excellence <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Free Returns <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">New Arrivals <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Free Shipping Over ₱3,000 <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Sustainable Fabrics <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">SS 2025 Collection <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Handcrafted Excellence <span class="marquee-dot">◆</span></span>
+      <span class="marquee-item">Free Returns <span class="marquee-dot">◆</span></span>
+    </div>
+  </div>
+
+  <!-- COLLECTIONS -->
+  <section class="section" id="collections">
+    <div class="section-header">
+      <div>
+        <div class="section-label">New Arrivals</div>
+        <h2 class="section-title">Featured<br>Products</h2>
+      </div>
+      <a href="#" class="view-all">View All</a>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
+
+  <!-- FEATURED BANNER -->
+  <div class="featured-banner" id="featured">
+    <div>
+      <div class="featured-eyebrow">The Signature Series</div>
+      <h2 class="featured-title">Crafted for<br><em style="font-family:'Cormorant Garamond',serif">Every</em><br>Moment
+      </h2>
+      <p class="featured-desc">Our signature pieces are designed to transcend seasons — built from premium natural
+        fibers and constructed with meticulous attention to every stitch.</p>
+      <div class="featured-stats">
+        <div>
+          <span class="stat-number">200+</span>
+          <span class="stat-label">Premium Pieces</span>
+        </div>
+        <div>
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Fabric Origins</span>
+        </div>
+        <div>
+          <span class="stat-number">10k+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+      </div>
+      <a href="#collections" class="btn-primary">Shop Now</a>
+    </div>
+    <div class="featured-visual">
+      <img src="Images/tailored_trousers.png" class="featured-art" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Browse</div>
+        <h2 class="section-title">Shop by<br>Category</h2>
+      </div>
+    </div>
+    <div class="categories-grid">
+      <div class="category-card large" style="grid-column: span 1; grid-row: span 2;">
+        <img src="Images/wool_overcoat.png" class="category-bg" style="width:100%; height:100%; object-fit:cover;">
+        <div class="category-overlay">
+          <div class="category-label">Men's</div>
+          <div class="category-name">Outerwear</div>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="Images/wrap_dress.png" class="category-bg" style="width:100%; height:100%; object-fit:cover;">
+        <div class="category-overlay">
+          <div class="category-label">Women's</div>
+          <div class="category-name">Dresses</div>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="Images/denim_jacket.png" class="category-bg" style="width:100%; height:100%; object-fit:cover;">
+        <div class="category-overlay">
+          <div class="category-label">All</div>
+          <div class="category-name">Accessories</div>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="Images/tailored_trousers.png" class="category-bg" style="width:100%; height:100%; object-fit:cover;">
+        <div class="category-overlay">
+          <div class="category-label">Men's</div>
+          <div class="category-name">Tailored</div>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="Images/wool_overcoat.png" class="category-bg" style="width:100%; height:100%; object-fit:cover;">
+        <div class="category-overlay">
+          <div class="category-label">Women's</div>
+          <div class="category-name">Knitwear</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter" id="about">
+    <div class="section-label" style="margin-bottom:16px;">Stay Connected</div>
+    <h2 class="newsletter-title">Join the Inner Circle</h2>
+    <p class="newsletter-sub">Early access to new collections, exclusive offers, and style inspiration.</p>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="Your email address" id="emailInput" />
+      <button class="newsletter-submit" onclick="subscribeNewsletter()">Subscribe</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">VŌLT</a>
+        <p>Contemporary clothing crafted for those who value quality, sustainability, and timeless design.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Men's</a></li>
+          <li><a href="#">Women's</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Sizing Guide</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 VŌLT. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="#">IG</a>
+        <a href="#">TK</a>
+        <a href="#">FB</a>
+        <a href="#">YT</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="JS/app.js"></script>
+</body>
+
+</html>
